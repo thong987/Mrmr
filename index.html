@@ -49,11 +49,11 @@
     <div class="Youtube">YouTube</div></a>
     <br>
     <a id="Facebook" onClick="Facebook()">
-    <div class="Facebook">Facebook/</div>
+    <div class="Facebook">Facebook</div>
     </a>
     <br>
     <a id="Tiktok" onClick="Tiktok()">
-    <div class="Tiktok">Tiktok/</div></a>
+    <div class="Tiktok">Tiktok</div></a>
     <br>
     <a id="Telegram" onClick="Telegram()">
     <div class="Telegram">Telegram</div></a>
@@ -97,37 +97,7 @@
         </ul>
         <br>
 
-        <audio id="background-music" autoplay></audio>
-
-<script>
-  const music = document.getElementById('background-music');
-  const playlist = [
-    'https://example.com/ve-ben-anh.mp3',  // Link bài "Về Bên Anh"
-    'https://example.com/chung-ta-khong-thuoc-ve-nhau.mp3' // Link bài "Chúng Ta Không Thuộc Về Nhau"
-  ];
-  let currentTrack = 0;
-
-  function playTrack(index) {
-    music.src = playlist[index];
-    music.load();
-    music.play();
-  }
-
-  music.volume = 0.5; // 50% âm lượng
-
-  document.addEventListener('click', function() {
-    if (music.paused) {
-      music.play();
-    }
-  });
-
-  music.addEventListener('ended', function() {
-    currentTrack = (currentTrack + 1) % playlist.length; // Chuyển bài
-    playTrack(currentTrack);
-  });
-
-  playTrack(currentTrack);
-</script>
+        
     <!-- ===== Thanh Gạch Ngang ===== -->
         <hr class="ThanhGachNgang">
     <footer class="Cuoi Trang">
