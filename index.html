@@ -36,7 +36,7 @@
     <h2 class="NameFtThanhDieu" align="center">
     Nguyen Hoang Thong<i class="fa fa-check-circle"></i></h2> 
     <h2 class="TieuSu">
-    Hey brother, I'm a Developer.<br>I like website design :)</h2>
+    Hey brother, I'm a Developer<br>I like website design</h2>
     <br><hr class="New"><br>
     <!-- Thông Tin Liên Hệ -->
     <h2 class="NameFtThanhDieu">
@@ -96,6 +96,38 @@
           <br>
         </ul>
         <br>
+
+        <audio id="background-music" autoplay></audio>
+
+<script>
+  const music = document.getElementById('background-music');
+  const playlist = [
+    'https://example.com/ve-ben-anh.mp3',  // Link bài "Về Bên Anh"
+    'https://example.com/chung-ta-khong-thuoc-ve-nhau.mp3' // Link bài "Chúng Ta Không Thuộc Về Nhau"
+  ];
+  let currentTrack = 0;
+
+  function playTrack(index) {
+    music.src = playlist[index];
+    music.load();
+    music.play();
+  }
+
+  music.volume = 0.5; // 50% âm lượng
+
+  document.addEventListener('click', function() {
+    if (music.paused) {
+      music.play();
+    }
+  });
+
+  music.addEventListener('ended', function() {
+    currentTrack = (currentTrack + 1) % playlist.length; // Chuyển bài
+    playTrack(currentTrack);
+  });
+
+  playTrack(currentTrack);
+</script>
     <!-- ===== Thanh Gạch Ngang ===== -->
         <hr class="ThanhGachNgang">
     <footer class="Cuoi Trang">
