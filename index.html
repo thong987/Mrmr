@@ -96,6 +96,21 @@
           <br>
         </ul>
         <br>
+        //MUSIC PLAY
+const MusicList=[    &quot;//thanhdieu.com/files/Em-Nào-Có-Tội.mp3&quot;,
+    &quot;//thanhdieu.com/files/Anh-Đã-Quen-Với-Cô-Đơn.mp3&quot;,
+    &quot;//thanhdieu.com/files/Về-Bên-Anh.mp3&quot;,
+];
+let t=parseInt(localStorage.getItem(&#39;td&#39;)) || Math.floor(Math.random() * MusicList.length);
+const audio=new Audio(MusicList[t]);
+function MusicPlay() {audio.play();}
+document.addEventListener(&#39;click&#39;, MusicPlay);
+audio.addEventListener(&quot;ended&quot;, function() {
+t=(t + 1) % MusicList.length;
+localStorage.setItem(&#39;td&#39;, t);
+audio.src=MusicList[t];
+audio.play();
+});
 
        
         
